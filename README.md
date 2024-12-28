@@ -1,1 +1,0 @@
-# stella_exercise16
