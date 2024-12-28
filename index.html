@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #87CEEB; /* Blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            gap: 10px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "header"
+                "section1"
+                "section2"
+                "section3"
+                "footer1"
+                "footer2";
+        }
+
+        .header {
+            background-color: #B5E61D; /* Light green */
+            height: 100px;
+            border-radius: 5px;
+            grid-area: header;
+        }
+
+        .section {
+            background-color: #00CED1; /* Cyan */
+            height: 100px;
+            border-radius: 5px;
+        }
+
+        .section1 {
+            grid-area: section1;
+        }
+
+        .section2 {
+            grid-area: section2;
+        }
+
+        .section3 {
+            grid-area: section3;
+        }
+
+        .footer {
+            background-color: lightgray;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        .footer1 {
+            grid-area: footer1;
+        }
+
+        .footer2 {
+            grid-area: footer2;
+        }
+
+        @media (min-width: 480px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-areas:
+                    "header header header"
+                    "section1 section2 section3"
+                    "footer1 footer1 footer2";
+            }
+
+            .section {
+                height: 100px;
+            }
+
+            .footer {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <div class="section section1"></div>
+        <div class="section section2"></div>
+        <div class="section section3"></div>
+        <div class="footer footer1"></div>
+        <div class="footer footer2"></div>
+    </div>
+</body>
+</html>
